@@ -1,25 +1,38 @@
 {% extends 'base.html' %}
 {% block sidebar %}
 {% for items in original %}
-<div class="image" style="background-image: url({{items.main_img.url}}); height: 200px; "><h3 style="z-index: 1; position: absolute; top: 180px; left: 500px; font-size: 50px; color: azure;">{{items.Title}}</h3></div>
+<link rel="stylesheet" href="static/css/styles.css">
+
+<div class="image" style="background-image: url({{items.main_img.url}}); height: 200px; ">
+  <h3 style="z-index: 1; position: absolute; top: 180px; left: 500px; font-size: 50px; color: azure;">{{items.Title}}</h3>
+</div>
 <div class="card sidebar" id="sidebar"> 
-    <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link active" href= "{% url '' %}">Overview</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'Travel' %}">Travel Guide</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'Things' %}">Things To Do</a>
-        </li>
-      </ul>
-    <hr>
-    <div class="card-body">
-        <!-- The Paragraoh will be constantly changing -->
-        <p id="Change">{{items.Overview_desc}}</p>
+  <div class="tabs">
+  <ul class="nav nav-pills nav-justified">  
+    <li class="nav-item">
+    <a class="nav-link active" onclick="showContent(0); addactive(0)">Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="showContent(1); addactive(0)">Travel Guide</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" onclick="showContent(2)">Things To Do</a>
+    </li>
+  </ul>  
+  </div>
+  <hr>
+  <!-- These will be constantly changing -->
+  <div class="content">
+    <div class="content-item" id="content-0">{{items.Overview_desc}}</div>
+    <div class="content-item" id="content-1">{{items.Travel_Guide_desc}}</div>
+    <div class="content-item" id="content-2">{{items.Things_to_do_desc}}</div>
+  </div>
+    
         {% endfor %}
     </div>
 </div>
-
+<form >
+  <input type="submit" name="Book" value="Book">
+</form>
+<script src="static/js/scripts.js"></script>
 {% endblock %}

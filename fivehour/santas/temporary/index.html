@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tab Switcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-button" onclick="showContent(0)">Tab 1</button>
+        <button class="tab-button" onclick="showContent(1)">Tab 2</button>
+        <button class="tab-button" onclick="showContent(2)">Tab 3</button>
+    </div>
+
+    <div class="content">
+        <div class="content-item" id="content-0">Content for Tab 1</div>
+        <div class="content-item" id="content-1">Content for Tab 2</div>
+        <div class="content-item" id="content-2">Content for Tab 3</div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
