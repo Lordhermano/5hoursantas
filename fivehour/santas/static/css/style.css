@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.border{
+    border-color: black;
+    border-radius: 20px;
+}
+
+.spacing{
+    width: 100vw;
+    justify-content: center;
+}
+.sidebar{
+    width: 40vw;
+}
